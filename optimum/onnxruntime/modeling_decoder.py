@@ -343,7 +343,8 @@ class ORTModelDecoder(ORTModel):
         if not validate_file_exists(model_id, decoder_file_name, subfolder=subfolder, revision=revision):
             decoder_without_past_path = ORTModelDecoder.infer_onnx_filename(
                 model_id,
-                [DECODER_ONNX_FILE_PATTERN],
+                #[DECODER_ONNX_FILE_PATTERN],
+                ['(.*).onnx'],
                 "decoder_file_name",
                 subfolder=subfolder,
                 use_auth_token=use_auth_token,
